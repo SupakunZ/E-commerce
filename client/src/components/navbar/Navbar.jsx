@@ -9,7 +9,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState("")
 
   return (
-    <div className=' flex justify-around py-[2.5rem] shadow-[0px_1px_3px_-2px_black]'>
+    <div className=' flex justify-around py-[1rem] shadow-[0px_1px_3px_-2px_black]'>
       <div className="nav-logo flex items-center gap-[10px]">
         <img src={logo} alt="" />
         <p className='text-[#171717] text-[36px] font-semibold'>SHOPPER</p>
