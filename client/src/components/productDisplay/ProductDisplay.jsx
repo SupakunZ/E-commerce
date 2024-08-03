@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import star_icon from '../assets/star_icon.png'
 import star_dull_icon from '../assets/star_dull_icon.png'
+import { ShopContext } from '../../context/ShopContext'
 
 
 const ProductDisplay = (props) => {
 
+  const { addToCart } = useContext(ShopContext) // เรียกใช้ function ใน Stones
   const { product } = props
 
   return (
@@ -46,7 +48,7 @@ const ProductDisplay = (props) => {
             <div className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>XL</div>
             <div className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>XXl</div>
           </div>
-          <button className='p-[20px_40px] w-[200px] text-[14px] font-medium text-white bg-[#FF4141] mb-[33px] border-none outline-none cursor-pointer'>ADD TO CART</button>
+          <button onClick={() => addToCart(product.id)} className='p-[20px_40px] w-[200px] text-[14px] font-medium text-white bg-[#FF4141] mb-[33px] border-none outline-none cursor-pointer'>ADD TO CART</button>
           <p className='productdisplay-right-category'><span className='font-semibold'>Category :</span>Women , T-Shirt, Crop Top</p>
           <p className='productdisplay-right-category'><span className='font-semibold'>Tags :</span>Modern, Latest</p>
         </div>
