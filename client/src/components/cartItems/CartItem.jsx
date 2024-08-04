@@ -1,10 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { ShopContext } from '../../context/ShopContext'
 import remove_icon from '../assets/cart_cross_icon.png'
 
 const CartItem = () => {
 
-  const { all_product, cartItems, removeFromCart } = useContext(ShopContext)
+  const { all_product, cartTotal, cartItems, removeFromCart, getTotalCartAmount } = useContext(ShopContext)
+
+  useEffect(() => {
+    getTotalCartAmount()
+  }, [removeFromCart])
 
   return (
     <div className='cartitems m-[100px_170px]'>
@@ -39,7 +43,7 @@ const CartItem = () => {
           <div>
             <div className="cartitems-total-item flex justify-between py-[15px]">
               <p>Subtatal</p>
-              <p>${0}</p>
+              <p>${cartTotal}</p>
             </div>
             <hr />
             <div className="cartitems-total-item flex justify-between py-[15px]">
@@ -49,7 +53,7 @@ const CartItem = () => {
             <hr />
             <div className="cartitems-total-item flex justify-between py-[15px]">
               <h3 className='text-[19px] font-semibold'>Total</h3>
-              <h3 className='text-[19px] font-semibold'>${0}</h3>
+              <h3 className='text-[19px] font-semibold'>${cartTotal}</h3>
             </div>
           </div>
           <button className='w-[262px] h-[58px] outline-none border-none bg-[#ff5a5a] text-[#fff] text-[14px] font-medium cursor-pointer'>PROCEED TO CHECKOUT</button>
