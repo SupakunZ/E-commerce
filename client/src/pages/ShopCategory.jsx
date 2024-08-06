@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import dropdown_icon from '../components/assets/dropdown_icon.png'
 import Item from '../components/item/Item'
+import './css/shopcategory.css'
 
 const ShopCategory = (props) => {
 
@@ -18,7 +19,7 @@ const ShopCategory = (props) => {
           Sort by <img className='inline' src={dropdown_icon} alt="" srcset="" />
         </div>
       </div>
-      <div className="shopcategory-products grid grid-cols-4 gap-[80px] my-[20px] mx-[170px]">
+      <div className="shopcategory-products grid grid-cols-4 place-items-center gap-y-[80px] my-[20px] mx-[170px]">
         {all_product.map((item, i) => {
           if (props.category === item.category) {
             return <Item key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price} />

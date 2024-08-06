@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import star_icon from '../assets/star_icon.png'
 import star_dull_icon from '../assets/star_dull_icon.png'
 import { ShopContext } from '../../context/ShopContext'
+import './productdisplay.css'
 
 
 const ProductDisplay = (props) => {
@@ -24,7 +25,7 @@ const ProductDisplay = (props) => {
       </div>
       <div className="productdisplay-right flex flex-col flex-1 m-[0px_70px]">
         <h1 className='text-[30px] text-[#3d3d3d] font-semibold'>{product.name}</h1>
-        <div className="productdisplay-right-star flex items-center mt-[10px] gap-[5px] text-[#1c1c1c] text-[14px]">
+        <div className="productdisplay-right-stars flex items-center mt-[10px] gap-[5px] text-[#1c1c1c] text-[14px]">
           <img className='inline' src={star_icon} alt="" />
           <img className='inline' src={star_icon} alt="" />
           <img className='inline' src={star_icon} alt="" />

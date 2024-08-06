@@ -1,0 +1,23 @@
+@media(max-width:800px){
+  .footer{
+    @apply gap-[20px]
+  }
+  .footer-logo{
+    @apply gap-[10px] items-center
+  }
+  .footer-logo img{
+    @apply w-[40px]
+  }
+  .footer-logo p{
+    @apply text-[25px]
+  }
+  .footer-links{
+    @apply text-[14px] gap-[10px]
+  }
+  .footer-social-icon img{
+    @apply w-[22px]
+  }
+  .foot-copyright p{
+    @apply text-[14px]
+  }
+}

@@ -1,0 +1,116 @@
+@media(max-width:1280px){
+  .productdisplay{
+    @apply mx-[60px]
+  }
+  .productdisplay-left{
+    @apply gap-[10px]
+  }
+  .productdisplay-img-list{
+    @apply gap-[10px]
+  }
+  .productdisplay-img-list img{
+    @apply h-[120px]
+  }
+  .productdisplay-main-img{
+    @apply w-auto h-[510px]
+  }
+  .productdisplay-right{
+    @apply mx-[30px]
+  }
+  .productdisplay-right h1{
+    @apply text-[22px]
+  }
+  .productdisplay-right-stars{
+    @apply gap-[3px] text-[13px]
+  }
+  .productdisplay-right-prices{
+    @apply my-[10px] text-[18px]
+  }
+  .productdisplay-right-description{
+    @apply text-[13px]
+  }
+  .productdisplay-right-size h1{
+    @apply mt-[20px] text-[20px]
+  }
+  .productdisplay-right-size div{
+    @apply p-[14px_20px]
+  }
+  .productdisplay-right button{
+    @apply w-[154px] py-[18px] mb-[20px] text-[11px]
+  }
+  .productdisplay-right-category{
+    @apply mt-[5px] text-[14px]
+  }
+}
+
+@media(max-width:1024px){
+  .productdisplay{
+    @apply mx-[30px]
+  }
+  .productdisplay-left{
+    @apply gap-[5px]
+  }
+  .productdisplay-img-list img{
+    @apply h-[80px]
+  }
+  .productdisplay-main-img{
+    @apply h-[350px]
+  }
+  .productdisplay-right h1{
+    @apply text-[18px]
+  }
+  .productdisplay-right-stars img{
+    @apply w-[15px]
+  }
+  .productdisplay-right-description{
+    @apply text-[12px]
+  }
+  .productdisplay-right-sizes{
+    @apply mt-[10px]
+  }
+  .productdisplay-right-size div{
+    @apply p-[10px_16px] text-[12px]
+  }
+  .productdisplay-right button{
+    @apply w-[138px] py-[14px] mb-[10px] text-[8px]
+  }
+  .productdisplay-right-category{
+    @apply text-[12px]
+  }
+}
+
+@media(max-width:800px){
+  .productdisplay{
+    @apply mx-[30px]
+  }
+  .productdisplay-left{
+    @apply gap-[5px]
+  }
+  .productdisplay-img-list img{
+    @apply h-[80px]
+  }
+  .productdisplay-main-img{
+    @apply h-[350px]
+  }
+  .productdisplay-right h1{
+    @apply text-[18px]
+  }
+  .productdisplay-right-stars img{
+    @apply w-[15px]
+  }
+  .productdisplay-right-description{
+    @apply text-[12px]
+  }
+  .productdisplay-right-sizes{
+    @apply mt-[10px]
+  }
+  .productdisplay-right-size div{
+    @apply p-[10px_16px] text-[12px]
+  }
+  .productdisplay-right button{
+    @apply w-[138px] py-[14px] mb-[10px] text-[8px]
+  }
+  .productdisplay-right-category{
+    @apply text-[12px]
+  }
+}

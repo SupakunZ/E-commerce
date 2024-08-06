@@ -1,0 +1,20 @@
+@media(max-width:1280px){
+  .breadcrum{
+    @apply m-[30px_50px] text-[14px]
+  }
+}
+@media(max-width:1024px){
+  .breadcrum{
+    @apply m-[30px_30px] text-[13px]
+  }
+}
+@media(max-width:800px){
+  .breadcrum{
+    @apply m-[30px_10px] text-[12px]
+  }
+}
+@media(max-width:500px){
+  .breadcrum{
+    @apply text-[10px]
+  }
+}

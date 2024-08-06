@@ -2,6 +2,7 @@ import React from 'react'
 import hand_icon from '../assets/hand_icon.png'
 import arrow_icon from '../assets/arrow.png'
 import hero_image from '../assets/hero_image.png'
+import './hero.css'
 
 
 const Hero = () => {

@@ -1,0 +1,44 @@
+@media(max-width:1280px){
+  .loginsignup{
+    @apply pt-[50px]
+  }
+  .loginsignup-container{
+    @apply w-auto max-w-[540px] max-h-[550px]
+  }
+  .loginsignup-container h1{
+    @apply my-[10px]
+  }
+  .loginsignup-fields{
+    @apply gap-[20px] mt-[20px]
+  }
+  .loginsignup-fields input{
+    @apply h-[65px] w-[100%]
+  }
+  .loginsignup-container button{
+    @apply w-[100%]  
+  }
+  .loginsignup-login{
+    @apply text-[16px]
+  }
+  .loginsignup-agree{
+    @apply text-[13px] gap-[10px]
+  }
+}
+
+@media(max-width:800px){
+  .loginsignup-container{
+    @apply p-[20px_30px]
+  }
+  .loginsignup-container h1{
+    @apply text-[24px]
+  }
+  .loginsignup-fields{
+    @apply mt-[20px]
+  }
+  .loginsignup-fields input{
+    @apply h-[50px]
+  }
+  .loginsignup-container button{
+    @apply h-[50px] text-[16px]  
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import './newletter.css'
 
 const NewLetter = () => {
   return (

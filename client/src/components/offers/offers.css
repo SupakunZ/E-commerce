@@ -1,0 +1,77 @@
+@media(max-width:1280px){
+  .offers{
+    @apply px-[80px] mb-[120px]
+  }
+  .offers-left h1{
+    @apply text-[40px] 
+  }
+  .offers-left p{
+    @apply text-[18px]
+  }
+  .offers-right img{
+    @apply w-[300px]
+  }
+  .offers-left button{
+    @apply w-[200px] h-[50px] text-[18px]
+  }
+  .offers-right{
+    @apply pt-[30px]
+  }
+}
+
+@media(max-width:1024px){
+  .offers{
+    @apply px-[60px] mb-[80px] h-[40vh]
+  }
+  .offers-left h1{
+    @apply text-[30px] 
+  }
+  .offers-left p{
+    @apply text-[16px]
+  }
+  .offers-right img{
+    @apply w-[200px]
+  }
+  .offers-left button{
+    @apply w-[160px] h-[40px] text-[16px]
+  }
+  .offers-right{
+    @apply pt-[10px]
+  }
+}
+
+@media(max-width:800px){
+  .offers{
+    @apply mb-[60px]
+  }
+  .offers-left h1{
+    @apply text-[22px] 
+  }
+  .offers-left p{
+    @apply text-[13px]
+  }
+  .offers-right img{
+    @apply w-[180px]
+  }
+  .offers-left button{
+    @apply w-[140px] h-[30px] text-[12px]
+  }
+}
+
+@media(max-width:500px){
+  .offers{
+    @apply h-[25vh] mb-[50px]
+  }
+  .offers-left h1{
+    @apply text-[16px] 
+  }
+  .offers-left p{
+    @apply text-[10px]
+  }
+  .offers-right img{
+    @apply w-[120px]
+  }
+  .offers-left button{
+    @apply w-[120px] h-[25px] text-[10px] mt-[12px]
+  }
+}

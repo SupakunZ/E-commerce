@@ -67,12 +67,30 @@
     @apply py-[10px]
   }
   .nav-dropdown{
-    @apply block w-[30px] rotate-[-90deg] transition duration-[0.5s]
+    @apply block scale-[0.7] rotate-[-90deg] transition duration-[0.5s]
   }
   .nav-menu{
-    @apply hidden h-[80px] w-[100%] absolute bg-white justify-center top-[50px]
+    @apply hidden h-[75px] w-[100%] absolute bg-white justify-center top-[55px]
   }
   .nav-menu-visible{
     @apply flex
+  }
+  .nav-dropdown.open{
+    @apply rotate-[0deg]
+  }
+}
+
+@media(max-width:500px){
+  .navbar{
+    @apply w-[8px_0px] gap-[0] 
+  }
+  .nav-logo{
+    @apply scale-[0.85]
+  }
+  .nav-menu{
+    @apply h-[60px] top-[55px]
+  }
+  .nav-login-cart {
+    transform: scale(0.85)
   }
 }

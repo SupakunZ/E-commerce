@@ -3,10 +3,11 @@ import footer_logo from '../assets/logo_big.png'
 import instagram_icon from '../assets/instagram_icon.png'
 import pintester_icon from '../assets/pintester_icon.png'
 import whatsapp_icon from '../assets/whatsapp_icon.png'
+import './footer.css'
 
 const Footer = () => {
   return (
-    <div className='footer flex flex-col justify-center items-center gap-[50px]'>
+    <div className='footer flex flex-col justify-center items-center pt-[40px] gap-[50px]'>
       <div className="footer-logo flex items-center gap-[20px]">
         <img src={footer_logo} alt="" />
         <p className='text-[#383838] text-[46px] font-medium'>SHOPPER</p>
