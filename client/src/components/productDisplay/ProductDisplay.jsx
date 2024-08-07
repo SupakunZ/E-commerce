@@ -40,7 +40,7 @@ const ProductDisplay = (props) => {
         <div className="productdisplay-right-description">
           Lorem ipsum dolor sit amet consectetur, Quas vitae veniore atque expedita veniam laborum voluptas asperiores!
         </div>
-        <div className="productdisplay-right-size">
+        <div className="productdisplay-right-sizes">
           <h1 className='mt-[40px] text-[#656565] text-[20px] font-medium'>Select Size</h1>
           <div className="productdisplay-right-size flex my-[25px] gap-[20px]">
             <div className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>S</div>

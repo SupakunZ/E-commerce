@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { ShopContext } from '../../context/ShopContext'
 import remove_icon from '../assets/cart_cross_icon.png'
+import './cartitem.css'
 
 const CartItem = () => {
 
@@ -25,12 +26,16 @@ const CartItem = () => {
         if (cartItems[e.id] > 0) { // เช็ค AllproductID ว่า value ตัวไหนมีค่ามากกว่า 1 
           return <div >
             <div className="cartitems-format grid items-center gap-[75px] py-[20px] text-[#454545] text-[15px] font-medium grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr]">
-              <img className='carticon-product-icon' src={e.image} alt="" />
+              <img className='carticon-product-icon object-cover' src={e.image} alt="" />
               <p>{e.name}</p>
               <p>{e.new_price}</p>
-              <button className='cartitems-quantity w-[64px] h-[50px] border-solid border-[2px] border-[#ebebeb] bg-[#FFF]'>{cartItems[e.id]}</button>
+              <div>
+                <button className='cartitems-quantity w-[64px] h-[50px] border-solid border-[2px] border-[#ebebeb] bg-[#FFF]'>{cartItems[e.id]}</button>
+              </div>
               <p>${e.new_price * cartItems[e.id]}</p>
-              <img className='cartitems-remove-icon w-[15px] mx-[25px] cursor-pointer' src={remove_icon} onClick={() => { removeFromCart(e.id) }} alt="" />
+              <div>
+                <img className='cartitems-remove-icon w-[15px] mx-[25px] cursor-pointer' src={remove_icon} onClick={() => { removeFromCart(e.id) }} alt="" />
+              </div>
             </div>
             <hr className='h-[3px] bg-[#e2e2e2] border-0' />
           </div>

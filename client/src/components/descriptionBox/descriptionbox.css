@@ -1,0 +1,14 @@
+@media(max-width:1280px){
+  .descriptionbox{
+    @apply m-[60px]
+  }
+}
+
+@media(max-width:800px){
+  .descriptionbox{
+    @apply m-[60px_20px]
+  }
+  .descriptionbox-description{
+    @apply text-[14px]
+  }
+}

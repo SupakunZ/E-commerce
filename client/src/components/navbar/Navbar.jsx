@@ -20,9 +20,9 @@ const Navbar = () => {
   return (
     <div className='navbar flex justify-around py-[1rem] shadow-[0px_1px_3px_-2px_black]'>
       <Link onClick={() => setMenu('shop')} to={'/'}>
-        <div className="nav-logo flex items-center gap-[10px]">
+        <div className="nav-logo flex items-end gap-[10px]">
           <img src={logo} alt="" />
-          <p className='text-[#171717] text-[36px] font-semibold'>SHOPPER</p>
+          <p className='text-[#171717] text-[35px] font-semibold'>SHOPPER</p>
         </div>
       </Link>
       <img className='nav-dropdown' onClick={drop_toggle} src={nav_dropdown} alt="" />
