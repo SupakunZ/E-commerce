@@ -23,8 +23,18 @@ app.get('/', (req, res) => {
 
 // Create Data to DataBases
 app.post('/addproduct', async (req, res) => {
+  let products = await modelSchema.find({})
+  let id
+  // Logic Auto increment ID
+  if (products.length > 0) { // ถ้า db มีข้อมูล
+    let last_product_array = products.slice(-1) //เอาแค่ตัวสุดท้ายมา
+    let last_product = last_product_array[0]
+    id = last_product.id + 1 // เข้าถึง id แล้วบวกไอดีต่อไป
+  } else {
+    id = 1;
+  }
   const product = new modelSchema({
-    id: req.body.id,
+    id: id,
     name: req.body.name,
     image: req.body.image,
     category: req.body.category,
@@ -36,6 +46,13 @@ app.post('/addproduct', async (req, res) => {
   console.log(product)
   await product.save()
   console.log('Success')
+  res.json({ success: true, name: req.body.name })
+})
+
+// Delete Data
+app.post('/removeproduct', async (req, res) => {
+  await modelSchema.findOneAndDelete({ id: req.body.id })
+  console.log('Remove')
   res.json({ success: true, name: req.body.name })
 })
 
@@ -56,6 +73,13 @@ app.post('/upload', upload.single('product'), (req, res) => { //parameter ที
     success: 1,
     image_url: `http:localhost:${PORT}/images/${req.file.filename}`
   })
+})
+
+// Creating API for getting all
+app.get('/allproducts', async (req, res) => {
+  let products = await modelSchema.find({});
+  console.log('All Products Fetched')
+  res.send(products)
 })
 
 app.listen(PORT, () => {
