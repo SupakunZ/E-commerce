@@ -68,7 +68,8 @@ const upload = multer({ storage: storage })
 
 //Create Upload Route
 app.use('/images', express.static('upload/images')) // อนุญาตมให้เข้าถึงโฟเดอร์ upload/images 
-app.post('/upload', upload.single('product'), (req, res) => { //parameter ที่ส่งมาต้องชื่อ product
+app.post('/upload', upload.single('product'), (req, res) => { // upload file จาก form ที่ส่งมา name: product ลงใน /upload
+  console.log(req.file)
   res.json({
     success: 1,
     image_url: `http:localhost:${PORT}/images/${req.file.filename}`
