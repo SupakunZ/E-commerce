@@ -9,6 +9,8 @@ const multer = require('multer') // Middleware ที่ช่วยจัดก
 const jwt = require('jsonwebtoken')
 const connectDB = require('./db/ConnectDB')
 const modelSchema = require('./models/Models')
+const UserSchema = require('./models/UserModel')
+const { error } = require('console')
 
 app.use(express.json())
 app.use(cors())
@@ -21,7 +23,7 @@ app.get('/', (req, res) => {
   res.send('Hello')
 })
 
-// Create Data to DataBases
+// Create Data to Databases
 app.post('/addproduct', async (req, res) => {
   let products = await modelSchema.find({})
   let id
@@ -72,7 +74,7 @@ app.post('/upload', upload.single('product'), (req, res) => { // upload file จ
   console.log(req.file)
   res.json({
     success: 1,
-    image_url: `http:localhost:${PORT}/images/${req.file.filename}`
+    image_url: `http://localhost:${PORT}/images/${req.file.filename}`
   })
 })
 
@@ -81,6 +83,41 @@ app.get('/allproducts', async (req, res) => {
   let products = await modelSchema.find({});
   console.log('All Products Fetched')
   res.send(products)
+})
+
+//** Create Endpoint for registering the user */
+app.post('/singup', async (req, res) => {
+  try {
+    // เช็ตว่าใน database มีข้อมู email นี้ไหม 
+    let check = await UserSchema.findOne({ email: req.body.email })
+    if (check) {
+      return res.status(400).json({ suscess: false, errors: "Existing user found with same email address" })
+    }
+    let cart = {}
+    for (let i = 0; i < 300; i++) {
+      cart[i] = 0;
+    }
+
+    const user = new UserSchema({ // กำหนกค่าลงใน Table
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      cartData: cart
+    })
+    await user.save() // save data at database
+
+    // use Json Web Token
+    const data = {
+      user: {
+        id: user.id
+      }
+    }
+
+    const token = jwt.sign(data, 'secret_ecom');
+    res.json({ success: true, token })
+  } catch (error) {
+    res.json({ success: "Failed Registering", status: error })
+  }
 })
 
 app.listen(PORT, () => {

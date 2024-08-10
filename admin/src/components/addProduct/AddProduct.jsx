@@ -36,7 +36,8 @@ const AddProduct = () => {
     //   console.log(element)
     // }
 
-    // Send API request
+    // --> Send API request
+    // ** 1.Create image to upload Folder **
     await fetch('http://www.localhost:4000/upload', {
       method: 'POST',
       headers: {
@@ -48,6 +49,16 @@ const AddProduct = () => {
     if (responseData.success) {
       product.image = responseData.image_url
       console.log(product)
+
+      // 2.Create data to MongoDB
+      await fetch('http://www.localhost:4000/addproduct', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(product)
+      }).then(resp => resp.json()).then((data) => { data.success ? alert('Product Added') : alert('Faild') })
     }
 
   }
