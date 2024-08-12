@@ -106,17 +106,40 @@ app.post('/singup', async (req, res) => {
     })
     await user.save() // save data at database
 
-    // use Json Web Token
     const data = {
       user: {
         id: user.id
       }
     }
 
+    // ** use Json Web Token **
     const token = jwt.sign(data, 'secret_ecom');
     res.json({ success: true, token })
   } catch (error) {
     res.json({ success: "Failed Registering", status: error })
+  }
+})
+
+// Create Login Route
+app.post('/login', async (req, res) => {
+  let user = await UserSchema.findOne({ email: req.body.email })
+  if (user) { // 1. check ว่า มี email นี้อยูใน database ไหม
+    const passCompare = req.body.password == user.password  // 2.Check ว่า password ที่ login เข้ามาตรงกับ database
+    if (passCompare) {
+      const data = {
+        user: {
+          id: user.id
+        }
+      }
+      const token = jwt.sign(data, 'secret_ecom') // 3. ส่ง Token กลับไป
+      res.json({ success: true, token })
+    }
+    else {
+      res.json({ suscess: false, errors: "Wrong Password" })
+    }
+  }
+  else {
+    res.json({ suscess: false, errors: "Wrong Email" })
   }
 })
 

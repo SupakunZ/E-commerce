@@ -33,13 +33,17 @@ const Navbar = () => {
         <li onClick={() => { setMenu("kids") }}><Link to={'/kids'}>Kids</Link> {menu === "kids" ? <hr /> : null}</li>
       </ul>
       <div className="nav-login-cart flex items-center gap-[45px] cursor-pointer">
-        <Link onClick={() => setMenu(null)} to={'/login'}>
-          <button className='active:bg-[#f3f3f3] w-[157px] bg-white h-[58px] outline-none border-[1px] border-black rounded-[75px] text-[18px] text-[#515151] font-medium'>Login</button>
-        </Link>
+        {localStorage.getItem('auth-token') ?
+          <button onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }} className='active:bg-[#f3f3f3] w-[157px] bg-white h-[58px] outline-none border-[1px] border-black rounded-[75px] text-[18px] text-[#515151] font-medium'>Logout</button>
+          :
+          <Link onClick={() => setMenu(null)} to={'/login'}>
+            <button className='active:bg-[#f3f3f3] w-[157px] bg-white h-[58px] outline-none border-[1px] border-black rounded-[75px] text-[18px] text-[#515151] font-medium'>Login</button>
+          </Link>
+        }
         <Link onClick={() => setMenu(null)} to={'/cart'}><img src={cart_icon} alt="" /></Link>
         <div className="nav-cart-count w-[22px] h-[22px] bg-red-500 flex justify-center items-center rounded-[11px] text-white text-[14px] mt-[-35px] ml-[-55px]">{getTotalCartItems()}</div>
       </div>
-    </div>
+    </div >
   )
 }
 
