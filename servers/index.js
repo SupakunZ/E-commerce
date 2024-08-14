@@ -143,6 +143,69 @@ app.post('/login', async (req, res) => {
   }
 })
 
+// get newcollection data
+app.get('/newcollections', async (req, res) => {
+  let products = await modelSchema.find({});
+  let newcollection = products.slice(0).slice(-8)
+  console.log("NewCollection Fetched")
+  res.send(newcollection)
+})
+
+// get popular in women section
+app.get('/popularinwomen', async (req, res) => {
+  let products = await modelSchema.find({ category: "women" })
+  let popular_women = products.slice(0, 4)
+  console.log("Popular in women Fetched")
+  res.send(popular_women)
+})
+
+
+// create middleware
+const fectUser = async (req, res, next) => {
+  const token = req.header('auth-token')
+  if (!token) {
+    res.status(401).send({ error: "Please authentication using valid token" })
+  } else {
+    try {
+      const data = jwt.verify(token, 'secret_ecom')
+      req.user = data.user
+      // console.log(data)
+      next()
+    } catch (error) {
+      res.status(401).send({ error: error })
+    }
+  }
+}
+
+// add product in cartdata
+app.post('/addtocart', fectUser, async (req, res) => {
+  let userData = await UserSchema.findOne({ _id: req.user.id })
+  console.log("Added :", req.body.itemId)
+  //updata database
+  userData.cartData[req.body.itemId] += 1;
+  await UserSchema.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData })
+  res.send("Added")
+})
+
+// remove product in database
+app.post('/removefromcart', fectUser, async (req, res) => {
+  let userData = await UserSchema.findOne({ _id: req.user.id })
+  console.log("Removed :", req.body.itemId)
+  //updata database
+  // if (userData.cartData > 0) {
+  userData.cartData[req.body.itemId] -= 1;
+  await UserSchema.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData })
+  res.send("Removed")
+  // }
+})
+
+// get cartdata
+app.post('/getcart', fectUser, async (req, res) => {
+  console.log("GetCart")
+  let userData = await UserSchema.findOne({ _id: req.user.id })
+  res.json(userData.cartData)
+})
+
 app.listen(PORT, () => {
   try {
     console.log(`Servers is running on Port ${PORT}`)

@@ -324,6 +324,14 @@ let all_product = [
     new_price: 85.0,
     old_price: 120.5,
   },
+  {
+    id: 37,
+    name: "Boys Orange Colourblocked Hooded Sweatshirt",
+    category: "kid",
+    image: p36_img,
+    new_price: 85.0,
+    old_price: 120.5,
+  },
 ];
 
 export default all_product;

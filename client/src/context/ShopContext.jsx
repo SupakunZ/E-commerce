@@ -1,13 +1,14 @@
-import React, { createContext, useState } from 'react'
-import all_product from '../components/assets/all_product'
+import React, { createContext, useEffect, useState } from 'react'
+import all_product from '../components/assets/all_product' // ** All product **
+
 
 // create useContext
 export const ShopContext = createContext(null) // ชื่อ Stones ที่จะเรียกใช้
 
-// func get id สินค้าทุกอัน
+// func get id สินค้าทุกอัน --> setProduct
 const getDefaultCart = () => {
   let cart = {};
-  for (let index = 0; index < all_product.length + 1; index++) {
+  for (let index = 0; index < 300 + 1; index++) { // จำนวนสินค้าทั้งหมด
     cart[index] = 0; // { Allproduct_ID (key) : 0 (value) }
   }
   return cart
@@ -17,16 +18,61 @@ const ShopContextProvider = (props) => {
 
   const [cartItems, setCartItems] = useState(getDefaultCart())
   const [cartTotal, setCartTotal] = useState(0)
+  // const [all_product, setAll_product] = useState([])
+
+  useEffect(() => {
+    // fetch('http://localhost:4000/allproducts')
+    //   .then(res => res.json())
+    //   .then(data => setAll_product(data))
+
+    if (localStorage.getItem('auth-token')) {
+      fetch('http://localhost:4000/getcart', {
+        method: "POST",
+        headers: {
+          Accept: 'application/from-data',
+          'auth-token': `${localStorage.getItem('auth-token')}`, //ส่ง token ไปเพื่อตรวจสอบ
+          'Content-Type': 'application/json'
+        },
+        body: ""
+      }).then(req => req.json()).then(data => setCartItems(data))
+    }
+  }, [])
 
   // Function เพิ่มลบของลงในตะกร้า
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
     // {cart ( Object จาก getDefaultCart ), key( ID ตัวที่จะเปลี่ยน ) : value( ค่าที่จะรับมาใหม่ +1 ) }
-    console.log(cartItems)
+    // console.log(cartItems)
+
+    // ** Check login ** --> have token
+    if (localStorage.getItem('auth-token')) {
+      fetch('http://localhost:4000/addtocart', {
+        method: "POST",
+        headers: {
+          Accept: 'application/from-data',
+          'auth-token': `${localStorage.getItem('auth-token')}`, //ส่ง token ไปเพื่อตรวจสอบ
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ "itemId": itemId }) // ส่ง id ไปเพื่อตรวจสอบ
+      }).then(req => req.json()).then(data => console.log(data))
+    }
   }
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
     // {cart ( Object จาก getDefaultCart ), key( ID ตัวที่จะเปลี่ยน ) : value( ค่าที่จะรับมาใหม่ -1 ) }
+
+    // ** Check login ** --> have token
+    if (localStorage.getItem('auth-token')) {
+      fetch('http://localhost:4000/removefromcart', {
+        method: "POST",
+        headers: {
+          Accept: 'application/from-data',
+          'auth-token': `${localStorage.getItem('auth-token')}`, //ส่ง token ไปเพื่อตรวจสอบ
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ "itemId": itemId })
+      })
+    }
   }
 
 
