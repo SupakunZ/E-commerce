@@ -1,3 +1,19 @@
+.hero-lastest-btn{
+  transition: ease-in-out 0.2s;
+  border-radius: 13px;
+}
+.hero-lastest-btn img{
+  transition: ease-in-out 0.2s;
+}
+.hero-lastest-btn:hover {
+  scale: 1.03;
+  transition: ease-in-out 0.2s;
+  img{
+    transform: translateX(5px);
+    transition: ease-in-out 0.2s;
+  }
+}
+
 @media(max-width:1280px){
   .hero-left{
     @apply pl-[100px]
@@ -13,9 +29,6 @@
   }
   .hero-lastest-btn{
     @apply gap-[10px] w-[250px] h-[60px] mt-[20px] text-[18px]
-  }
-  .hero-right img{
-    @apply w-[500px]
   }
 }
 
@@ -35,9 +48,6 @@
   .hero-lastest-btn{
     @apply w-[220px] h-[50px] text-[16px]
   }
-  .hero-right img{
-    @apply w-[400px]
-  }
 }
 
 @media(max-width:800px){
@@ -56,28 +66,16 @@
   .hero-lastest-btn{
     @apply w-[175px] h-[40px] text-[13px]
   }
-  .hero-right img{
-    @apply w-[300px]
-  }
 }
 
 @media(max-width:500px){
-  .hero{
-    @apply flex-col
-  }
-  .hero-right{
-    @apply hidden
-  }
   .hero-left h2{
     @apply text-[18px]
   }
   .hero-left p{
     @apply text-[50px]
   }
-  .hero-hand-icon img{
-    @apply w-[55px]
-  }
   .hero-lastest-btn{
     @apply w-[200px] h-[45px] text-[14px]
   }
-}
+} 

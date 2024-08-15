@@ -5,13 +5,21 @@
   justify-content: center;
   gap: 3px;
   cursor: pointer;
+  position: relative;
 }
 .nav-menu hr{
+  position: absolute;
+  bottom: -3px;
   border: none;
-  width: 80%;
+  width: 0%;
   height: 3px;
   border-radius: 10px;
   background: #FF4141;
+  transition: ease-in-out 0.25s;
+}
+.nav-menu li:hover hr{
+    width: 100%;
+    transition: ease-in-out 0.25s;
 }
 .nav-dropdown{
  display: none;   
@@ -40,7 +48,7 @@
       font-size: 15px;
   }
   .nav-cart-count{
-    @apply ml-[-40px] text-[12px]
+    @apply ml-[-38px] text-[12px]
   }
 }
 
@@ -58,7 +66,7 @@
     @apply w-[30px]
   }
   .nav-cart-count{
-    @apply w-[17px] h-[17px] mt-[-30px] text-[12px]
+    @apply w-[16px] h-[16px] mt-[-29px] text-[12px]
   }
 }
 

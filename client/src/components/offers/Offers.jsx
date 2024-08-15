@@ -1,18 +1,22 @@
 import React from 'react'
-import exclusive_image from '../assets/exclusive_image.png'
 import './offers.css'
+import arrow_icon from '../assets/arrow.png'
+import exclusive_image from "../assets/slide-exclusive.jpg";
 
 const Offers = () => {
   return (
-    <div className='offers w-[79%] h-[60vh] bg-gradient-to-b from-[#fde1ff] from 0% to-[#e1ffea22] from 60%  flex m-auto px-[140px] mb-[150px]'>
-      <div className="offers-left flex tracking-[-1px] flex-1 flex-col justify-center">
-        <h1 className='text-[#171717] text-[78px] font-medium'>Exclusive</h1>
-        <h1 className='text-[#171717] text-[78px] font-medium'>Offers For You</h1>
-        <p className=' text-[#171717] text-[20px] font-semibold'>ONLY ON BEST SELLERS PRODUCTS</p>
-        <button className='w-[282px] h-[70px] mt-[30px] cursor-pointer border-none rounded-[35px] bg-[#ff4141] text-[white] text-[20px] font-medium'>Check Now</button>
+    <div className='offers w-[79%] relative h-[60vh] flex m-auto px-[140px] mb-[100px] overflow-hidden'>
+      <div className="offers-left flex flex-col justify-center">
+        <h1 className='text-[#171717] text-[55px] font-semibold'>Exclusive</h1>
+        <h1 className='text-[#171717] text-[55px] font-semibold'>Offers For You</h1>
+        <p className=' text-red-600 text-[18px] font-bold'>ONLY ON BEST SELLERS PRODUCTS</p>
+        <div className="cursor-pointer offers-lastest-btn flex justify-center items-center gap-[15px] tracking-[3px] w-[195px] h-[52px] mt-[30px] bg-[#111111] text-[white] text-[13px] font-bold">
+          <div>CHECK NOW</div>
+          <img className='w-[15px]' src={arrow_icon} alt="" />
+        </div>
       </div>
-      <div className="offers-right flex flex-1 items-center justify-center pt-[50px]">
-        <img src={exclusive_image} alt="" />
+      <div className="offers-right">
+        <img className='w-full h-[120%] absolute left-5 top-0 z-[-1] object-cover' src={exclusive_image} alt="" />
       </div>
     </div>
   )

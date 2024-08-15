@@ -82,8 +82,8 @@ const ShopCategory = (props) => {
             else { null }
           })}
       </div>
-      <div onClick={() => setExplore(explore + 4)} className="cursor-pointer shopcategory-loadmore flex items-center justify-center my-[150px] mx-auto w-[233px] h-[69px] rounded-[75px] bg-[#ededed] text-[#787878] text-[18px] font-normal">
-        Explore More
+      <div onClick={() => setExplore(explore + 4)} className="cursor-pointer transition duration-[0.3s] ease-in-out shopcategory-loadmore flex items-center justify-center  my-[100px] mx-auto w-[190px] h-[48px] rounded-[75px] bg-[#e6e6e6] text-[#111111] text-[15px] font-bold hover:bg-black hover:text-white">
+        LOAD MORE
       </div>
     </div>
   )
