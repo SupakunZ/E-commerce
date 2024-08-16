@@ -1,11 +1,5 @@
-.item .item-warp:hover{
-  /* img{
-    scale: 1.05;
-    transition: ease-in-out 0.45s;
-  } */
-  button{
-    transform: translateY(-65px);
-  }
+.item .item-warp:hover button{
+    transform: translateY(-4rem);
 }
 @media(max-width:1536px){
   .item{
@@ -34,6 +28,12 @@
   .item-price-new{
     @apply text-[15px]
   }
+  .item-warp button{
+    @apply w-[130px] h-[40px]
+  }
+  .item .item-warp:hover button{
+    transform: translateY(-10rem);
+}
 }
 
 @media(max-width:1024px){
@@ -49,6 +49,12 @@
   .item-price-new{
     @apply text-[13px]
   }
+  .item-warp button{
+    @apply w-[100px] h-[32px] text-[13px]
+  }
+  .item .item-warp:hover button{
+    transform: translateY(-9.5rem);
+  }
 }
 
 @media(max-width:800px){
@@ -63,6 +69,12 @@
   }
   .item-price-new{
     @apply text-[12px]
+  }
+  .item-warp button{
+    @apply w-[73px] h-[26px] text-[10px]
+  }
+  .item .item-warp:hover button{
+    transform: translateY(-6.4rem);
   }
 }
 

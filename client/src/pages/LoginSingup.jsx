@@ -75,7 +75,7 @@ const LoginSingup = () => {
   console.log(responseData)
 
   return (
-    <div className='loginsignup w-[100%] h-[80vh] bg-[#fce3fe] pt-[100px]'>
+    <div className='loginsignup w-[100%] bg-[#fce3fe] py-[60px]'>
       <div className="loginsignup-container w-[580px] h-[600px] bg-white m-auto p-[32px_60px]">
         <h1 className='text-[30px] font-medium mt-[15px]'>{state}</h1>
         <form onSubmit={state === "Sing Up" ? handleSubmit(onSubmit) : handleSubmit(onLogin)} action="">
@@ -90,9 +90,9 @@ const LoginSingup = () => {
         {/* <input onChange={changeHandler} className='h-[62px] w-[100%] pl-[20px] outline-none text-[16px] text-[#5c5c5c] border-solid border-[1px] border-[#c9c9c9]' name='email' type="email" placeholder='Email Address' />
         <input onChange={changeHandler} className='h-[62px] w-[100%] pl-[20px] outline-none text-[16px] text-[#5c5c5c] border-solid border-[1px] border-[#c9c9c9]' name='password' type="password" placeholder='Password' /> */}
         {state === "Sing Up" ?
-          <p className='loginsignup-login mt-[20px] text-[#5c5c5c] text-[14px] font-medium'>Create an account? <span onClick={() => { setState('Login') }} className='text-[#ff4141] font-semibold cursor-pointer'>Click here</span></p>
+          <p className='loginsignup-login mt-[20px] text-[#5c5c5c] text-[14px] font-medium'>Already have an account <span onClick={() => { setState('Login') }} className='text-[#ff4141] font-semibold cursor-pointer'> Login here </span></p>
           :
-          <p className='loginsignup-login mt-[20px] text-[#5c5c5c] text-[14px] font-medium'>Already have an account <span onClick={() => { setState('Sing Up') }} className='text-[#ff4141] font-semibold cursor-pointer'>Login here</span></p>
+          <p className='loginsignup-login mt-[20px] text-[#5c5c5c] text-[14px] font-medium'>Create an account?<span onClick={() => { setState('Sing Up') }} className='text-[#ff4141] font-semibold cursor-pointer'> Click here </span></p>
         }
         {state === "Sing Up" ?
           <div className="loginsignup-agree flex items-center my-[20px] gap-[20px] text-[#5c5c5c] text-[14px] font-medium">

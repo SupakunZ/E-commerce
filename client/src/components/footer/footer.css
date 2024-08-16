@@ -1,23 +1,30 @@
+@media(max-width:1024px){
+  .footer .grid{
+    @apply gap-[3.2rem]
+  }
+}
 @media(max-width:800px){
   .footer{
     @apply gap-[20px]
   }
-  .footer-logo{
-    @apply gap-[10px] items-center
+  .footer .grid{
+    @apply grid-cols-[1fr_0.5fr_0.5fr] gap-[3rem]
   }
-  .footer-logo img{
-    @apply w-[40px]
+  .box-content{
+    @apply w-[230px]
   }
-  .footer-logo p{
-    @apply text-[25px]
+}
+@media(max-width:500px){
+  .footer{
+    @apply gap-[20px]
   }
-  .footer-links{
-    @apply text-[14px] gap-[10px]
+  .footer .grid{
+    @apply grid-cols-[0.4fr_0.4fr] gap-[3rem]
   }
-  .footer-social-icon img{
-    @apply w-[22px]
+  .box-content{
+    @apply w-[228px]
   }
-  .foot-copyright p{
-    @apply text-[14px]
+  .foot-copyright{
+    @apply w-[300px] text-center
   }
 }

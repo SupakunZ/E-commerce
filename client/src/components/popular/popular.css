@@ -1,7 +1,4 @@
 @media(max-width:1280px){
-  .popular{
-    @apply h-[70vh]
-  }
   .popular h1{
     @apply text-[40px]
   }
@@ -14,9 +11,6 @@
 }
 
 @media(max-width:1024px){
-  .popular{
-    @apply h-[60vh]
-  }
   .popular h1{
     @apply text-[30px]
   }
@@ -29,9 +23,6 @@
 }
 
 @media(max-width:800px){
-  .popular{
-    @apply h-[50vh] gap-[6px]
-  }
   .popular h1{
     @apply text-[20px]
   }
@@ -44,9 +35,6 @@
 }
 
 @media(max-width:500px){
-  .popular{
-    @apply h-[90vh]
-  }
   .popular-item{
     @apply grid grid-cols-2 gap-[20px]
   }

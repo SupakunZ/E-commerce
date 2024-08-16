@@ -15,7 +15,7 @@ const Popular = () => {
   }, [])
 
   return (
-    <div className='popular flex flex-col items-center gap-[10px] h-[90vh] pt-[90px]'>
+    <div className='popular flex flex-col items-center gap-[10px] lg:mb-[90px] md:mb-[70px] sm:mb-[50px] mb-[45px]'>
       <h1 className='text-[#171717] text-[48px] font-semibold'>POPULAR IN WOMEN</h1>
       <hr className='w-[200px] h-[6px] rounded-[10px] bg-[#252525]' />
       <div className="popular-item mt-[50px] flex gap-[30px]">

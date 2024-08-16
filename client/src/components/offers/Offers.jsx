@@ -5,7 +5,7 @@ import exclusive_image from "../assets/slide-exclusive.jpg";
 
 const Offers = () => {
   return (
-    <div className='offers w-[79%] relative h-[60vh] flex m-auto px-[140px] mb-[100px] overflow-hidden'>
+    <div className='offers w-[79%] relative h-[60vh] flex m-auto px-[140px] lg:mb-[90px] md:mb-[70px] sm:mb-[50px] mb-[45px] overflow-hidden'>
       <div className="offers-left flex flex-col justify-center">
         <h1 className='text-[#171717] text-[55px] font-semibold'>Exclusive</h1>
         <h1 className='text-[#171717] text-[55px] font-semibold'>Offers For You</h1>

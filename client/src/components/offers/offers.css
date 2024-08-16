@@ -15,7 +15,7 @@
 }
 @media(max-width:1280px){
   .offers{
-    @apply px-[80px] mb-[120px]
+    @apply px-[80px]
   }
   .offers-left h1{
     @apply text-[40px] 
@@ -36,7 +36,7 @@
 
 @media(max-width:1024px){
   .offers{
-    @apply px-[60px] mb-[80px] h-[40vh]
+    @apply px-[60px] h-[40vh]
   }
   .offers-left h1{
     @apply text-[30px] 
@@ -60,9 +60,6 @@
 }
 
 @media(max-width:800px){
-  .offers{
-    @apply mb-[60px]
-  }
   .offers-left h1{
     @apply text-[22px] 
   }
@@ -83,7 +80,7 @@
 
 @media(max-width:500px){
   .offers{
-    @apply h-[25vh] mb-[50px]
+    @apply h-[25vh]
   }
   .offers-left h1{
     @apply text-[16px] 

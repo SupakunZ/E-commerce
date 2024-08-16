@@ -1,6 +1,5 @@
 import React, { useContext, useRef, useState } from 'react'
 import './navbar.css'
-import logo from '../assets/logo.png'
 import cart_icon from '../assets/cart_icon.png'
 import nav_dropdown from '../assets/nav_dropdown.png'
 import { Link } from 'react-router-dom'
@@ -19,9 +18,8 @@ const Navbar = () => {
 
   return (
     <div className='navbar flex justify-around py-[1rem] shadow-[0px_1px_3px_-2px_black]'>
-      <Link onClick={() => setMenu('shop')} to={'/'}>
+      <Link className='flex items-center' onClick={() => setMenu('shop')} to={'/'}>
         <div className="nav-logo flex items-center gap-[5px]">
-          {/* <img src={logo} alt="" /> */}
           <p className='text-[#171717] text-[25px] font-black'>GOZA</p>
           <p className='text-[#171717] text-[25px] font-semibold'>STORE</p>
         </div>
