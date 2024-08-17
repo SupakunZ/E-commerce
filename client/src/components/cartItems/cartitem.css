@@ -11,9 +11,6 @@
   .cartitems{
     @apply m-[60px_50px]
   }
-  /* .cartitems-format-main{
-    @apply gap-[20px] py-[15px] text-[15px]
-  } */
   .cartitems-format-main p{
     @apply flex justify-center 
   }
@@ -30,7 +27,7 @@
     @apply w-[40px] h-[30px]
   }
   .cartitems-down{
-    @apply my-[80px] flex-col gap-[80px]
+    @apply my-[50px] flex-col gap-[80px]
   }
   .cartitems-total{
     @apply m-0

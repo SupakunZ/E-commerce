@@ -42,9 +42,9 @@ const CartItem = () => {
         }
         return null;
       })}
-      <div className="cartitems-down flex my-[80px]">
-        <div className="cartitems-total flex-1 flex flex-col mr-[200px] gap-[32px]">
-          <h1 className='text-[30px] font-semibold'>cart Totals</h1>
+      <div className="cartitems-down flex my-[70px]">
+        <div className="cartitems-total flex-1 flex flex-col mr-[200px] gap-[20px]">
+          <h1 className='text-[24px] font-semibold'>Order Summary</h1>
           <div>
             <div className="cartitems-total-item flex justify-between py-[15px]">
               <p>Subtatal</p>
@@ -52,7 +52,7 @@ const CartItem = () => {
             </div>
             <hr />
             <div className="cartitems-total-item flex justify-between py-[15px]">
-              <p>Shipping Fee</p>
+              <p>Shipping</p>
               <p>Free</p>
             </div>
             <hr />
