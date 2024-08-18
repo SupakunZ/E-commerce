@@ -26,7 +26,7 @@ https://github.com/SupakunZ/SpaceX_Clone/assets/168329218/3bd11cc4-65fa-48db-8d3
       <li>TailwindCSS</li>
   </ul>
   
-  <i>Backtend :</i>
+  <i>Backend :</i>
   <ul>
       <li>NodeJS</li>
       <li>ExpressJS</li>  
