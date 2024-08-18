@@ -22,7 +22,7 @@ connectDB()
 
 // API Create
 app.get('/', (req, res) => {
-  res.send('Hello')
+  res.send('Successfully connected to server.')
 })
 
 // Create Data to Databases

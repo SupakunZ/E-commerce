@@ -1,10 +1,12 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './newletter.css'
+import axios from 'axios'
 
 const NewLetter = () => {
 
   const [getemail, setGetemail] = useState({ email: "" })
   const mailRef = useRef()
+  const URL = import.meta.env.VITE_APP_API
 
   const changeHandler = (e) => {
     setGetemail({ ...getemail, [e.target.name]: e.target.value })
@@ -15,6 +17,11 @@ const NewLetter = () => {
     alert('Successfully, Thank Your for Subscribe.')
     mailRef.current.value = ''
   }
+
+  useEffect(() => {
+    axios(`${URL}/`)
+      .then(res => console.log(res.data))
+  }, [])
 
   return (
     <div className='newsletter w-[80%] h-[40vh] flex flex-col bg-gradient-to-b from-[#E9EAE3] from 0% to-[#e1ffea22] from 60% items-center justify-center m-auto px-[140px] lg:mb-[90px] md:mb-[70px] sm:mb-[50px] mb-[45px] gap-[35px]'>

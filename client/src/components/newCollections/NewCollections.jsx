@@ -6,9 +6,10 @@ import new_collections_backup from '../assets/new_collections'
 const NewCollections = () => {
 
   const [new_collection, setNew_collection] = useState([])
+  const URL = import.meta.env.VITE_APP_API
 
   useEffect(() => {
-    fetch('http://localhost:4000/newcollections') // fetch data from admin
+    fetch(`${URL}/newcollections`) // fetch data from admin
       .then(req => req.json())
       .then(data => setNew_collection(data))
   }, [])

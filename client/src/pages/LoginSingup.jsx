@@ -7,6 +7,7 @@ const LoginSingup = () => {
 
   const [state, setState] = useState("Login")
   const [responseData, setResponseData] = useState([])
+  const URL = import.meta.env.VITE_APP_API
 
   // วิธีเก็บค่าจาก Form --> 1. useForm to easy
   const { register, handleSubmit, reset } = useForm()
@@ -27,7 +28,7 @@ const LoginSingup = () => {
 
     // Fect API
     // var responseData;
-    // await fetch('http://localhost:4000/singup', {
+    // await fetch(`${URL}/singup`, {
     //   method: 'POST',
     //   headers: {
     //     Accept: 'application/form-data',
@@ -37,7 +38,7 @@ const LoginSingup = () => {
     // }).then(resq => resq.json()).then(data => data = setResponseData(data))
 
     // Axios API
-    await axios.post('http://localhost:4000/singup', data)
+    await axios.post(`${URL}/singup`, data)
       .then((resq) => {
         let response = resq.data
         setResponseData(response)
@@ -55,7 +56,7 @@ const LoginSingup = () => {
   }
 
   const onLogin = async (data) => {
-    await axios.post('http://localhost:4000/login', data)
+    await axios.post(`${URL}/login`, data)
       .then(resq => {
         let response = resq.data
         if (response.success) {

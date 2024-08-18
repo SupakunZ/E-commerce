@@ -14,8 +14,6 @@ import kids_banner from './components/assets/banner_kids.png'
 import ScrollTop from './components/scrolltop/ScrollTop'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <div>

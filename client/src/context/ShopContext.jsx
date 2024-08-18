@@ -18,15 +18,17 @@ const ShopContextProvider = (props) => {
 
   const [cartItems, setCartItems] = useState(getDefaultCart())
   const [cartTotal, setCartTotal] = useState(0)
+  const URL = import.meta.env.VITE_APP_API
+
   // const [all_product, setAll_product] = useState([])
 
   useEffect(() => {
-    // fetch('http://localhost:4000/allproducts')
+    // fetch(`${URL}/allproducts`)
     //   .then(res => res.json())
     //   .then(data => setAll_product(data))
 
     if (localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/getcart', {
+      fetch(`${URL}/getcart`, {
         method: "POST",
         headers: {
           Accept: 'application/from-data',
@@ -46,7 +48,7 @@ const ShopContextProvider = (props) => {
 
     // ** Check login ** --> have token
     if (localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/addtocart', {
+      fetch(`${URL}/addtocart`, {
         method: "POST",
         headers: {
           Accept: 'application/from-data',
@@ -63,7 +65,7 @@ const ShopContextProvider = (props) => {
 
     // ** Check login ** --> have token
     if (localStorage.getItem('auth-token')) {
-      fetch('http://localhost:4000/removefromcart', {
+      fetch(`${URL}/removefromcart`, {
         method: "POST",
         headers: {
           Accept: 'application/from-data',

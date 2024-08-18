@@ -7,9 +7,10 @@ import './popular.css'
 const Popular = () => {
 
   const [data_product, setData_product] = useState([])
+  const URL = import.meta.env.VITE_APP_API
 
   useEffect(() => {
-    fetch('http://localhost:4000/popularinwomen') // fetch data from admin
+    fetch(`${URL}/popularinwomen`) // fetch data from admin
       .then(req => req.json())
       .then(data => { setData_product(data) })
   }, [])
