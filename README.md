@@ -1,7 +1,7 @@
 # E-commerce
 E-commerce Website is developed using ReactJS TailwindCSS for the client and NodeJS MongoDB for the server.
 
-https://github.com/SupakunZ/SpaceX_Clone/assets/168329218/3bd11cc4-65fa-48db-8d31-59d734a7e2ab
+https://github.com/user-attachments/assets/253e24fb-e4ed-4512-b321-7451d238cf99
 
 ## 🍄 Live Demo 
 <a href='https://ecommercr.netlify.app' target="_blank">E-commerce</a>
