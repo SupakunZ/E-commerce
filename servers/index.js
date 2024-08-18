@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
-const PORT = 4000
+const dotenv = require('dotenv').config()
+const PORT = process.env.PORT
 // Library
 const mongoose = require('mongoose')
 const cors = require('cors')
@@ -11,6 +12,7 @@ const connectDB = require('./db/ConnectDB')
 const modelSchema = require('./models/Models')
 const UserSchema = require('./models/UserModel')
 const { error } = require('console')
+
 
 app.use(express.json())
 app.use(cors())

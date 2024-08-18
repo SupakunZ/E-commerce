@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
+const dotenv = require('dotenv').config()
+
 
 const ConnectDB = async () => {
   try {
-    mongoose.connect("mongodb+srv://gunbyboy02:gun053795606@cluster0.ibalo59.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/e-commerce")
+    mongoose.connect(process.env.MONGO_URL)
     console.log('ConnectDB !!!')
   } catch (error) {
     console.log(error)
