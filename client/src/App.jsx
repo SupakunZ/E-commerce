@@ -11,6 +11,7 @@ import Footer from './components/footer/Footer'
 import mens_banner from './components/assets/banner_mens.png'
 import women_banner from './components/assets/banner_women.png'
 import kids_banner from './components/assets/banner_kids.png'
+import ScrollTop from './components/scrolltop/ScrollTop'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +32,7 @@ function App() {
             <Route path='/cart' element={<Cart />} />
             <Route path='/login' element={<LoginSignup />} />
           </Routes>
+          <ScrollTop />
           <Footer />
         </BrowserRouter>
       </div>
