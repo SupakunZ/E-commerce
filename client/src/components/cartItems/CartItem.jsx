@@ -61,13 +61,13 @@ const CartItem = () => {
               <h3 className='text-[19px] font-semibold'>${cartTotal}</h3>
             </div>
           </div>
-          <button className='w-[262px] h-[58px] outline-none border-none bg-[#ff5a5a] text-[#fff] text-[14px] font-medium cursor-pointer'>PROCEED TO CHECKOUT</button>
+          <button className='w-[262px] h-[58px] outline-none border-none bg-black text-[#fff] text-[14px] font-medium cursor-pointer hover:text-[#adadad]'>PROCEED TO CHECKOUT</button>
         </div>
-        <div className="cartitems-promocode flex-1 text-[14px] font-medium">
+        <div className="cartitems-promocode flex-1 text-[15px] font-medium">
           <p className='text-[#555]'>If you a promo code, Enter it here</p>
           <div className="cartitems-promobox flex items-center w-[504px] mt-[15px] pl-[20px] h-[58px] bg-[#eaeaea]">
             <input className='border-none outline-none bg-transparent text-[14px] w-[330px] h-[50px]' type="text" placeholder='promo code' />
-            <button className='w-[170px] h-[58px] text-[14px] bg-black text-white cursor-pointer'>Submit</button>
+            <button className='w-[170px] h-[58px] text-[14px] bg-black text-white cursor-pointer hover:text-[#adadad]'>Submit</button>
           </div>
         </div>
       </div>

@@ -1,3 +1,6 @@
+.select{
+  @apply bg-black text-white
+}
 @media(max-width:1280px){
   .productdisplay{
     @apply mx-[60px]
@@ -36,7 +39,7 @@
     @apply p-[14px_20px]
   }
   .productdisplay-right button{
-    @apply w-[154px] py-[18px] mb-[20px] text-[11px]
+    @apply w-[158px] py-[18px] mb-[20px] text-[12px]
   }
   .productdisplay-right-category{
     @apply mt-[5px] text-[14px]
@@ -72,7 +75,7 @@
     @apply p-[10px_16px] text-[12px]
   }
   .productdisplay-right button{
-    @apply w-[138px] py-[14px] mb-[10px] text-[8px]
+    @apply w-[140px] py-[14px] mb-[10px] text-[9.5px]
   }
   .productdisplay-right-category{
     @apply text-[12px]
@@ -153,7 +156,7 @@
     @apply p-[10px_16px] text-[14px]
   }
   .productdisplay-right button{
-    @apply w-[138px] text-[13px]
+    @apply w-[138px] text-[10px]
   }
   .productdisplay-right-category{
     @apply text-[14px]

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import star_icon from '../assets/star_icon.png'
 import star_dull_icon from '../assets/star_dull_icon.png'
 import { ShopContext } from '../../context/ShopContext'
@@ -8,7 +8,13 @@ import './productdisplay.css'
 const ProductDisplay = (props) => {
 
   const { addToCart } = useContext(ShopContext) // เรียกใช้ function ใน Stones
+  const [size, setSize] = useState("")
+  const sizeRef = useRef()
   const { product } = props
+
+  const size_toggle = (e) => {
+    e.target.classList.toggle('select')
+  }
 
   return (
     <div className='productdisplay flex m-[0px_150px]'>
@@ -43,13 +49,13 @@ const ProductDisplay = (props) => {
         <div className="productdisplay-right-sizes">
           <h1 className='mt-[40px] text-[#656565] text-[20px] font-medium'>Select Size</h1>
           <div className="productdisplay-right-size flex my-[25px] gap-[20px]">
-            <div className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>S</div>
-            <div className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>M</div>
-            <div className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>L</div>
-            <div className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>XL</div>
-            <div className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>XXl</div>
+            <div onClick={size_toggle} className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>S</div>
+            <div onClick={size_toggle} className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>M</div>
+            <div onClick={size_toggle} className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>L</div>
+            <div onClick={size_toggle} className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>XL</div>
+            <div onClick={size_toggle} className='cursor-pointer p-[18px_24px] bg-[#fbfbfb] rounded-[3px] border-solid border-[#ebebeb] border-[1px]'>XXl</div>
           </div>
-          <button onClick={() => addToCart(product.id)} className='p-[20px_40px] w-[200px] text-[14px] font-medium text-white bg-[#FF4141] mb-[33px] border-none outline-none cursor-pointer'>ADD TO CART</button>
+          <button onClick={() => addToCart(product.id)} className='p-[18px_38px] hover:text-[#adadad] w-[175px] text-[14px] font-medium text-white bg-black mb-[33px] border-none outline-none cursor-pointer'>ADD TO CART</button>
           <p className='productdisplay-right-category'><span className='font-semibold'>Category :</span>Women , T-Shirt, Crop Top</p>
           <p className='productdisplay-right-category'><span className='font-semibold'>Tags :</span>Modern, Latest</p>
         </div>

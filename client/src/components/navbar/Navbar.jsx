@@ -25,7 +25,7 @@ const Navbar = () => {
         </div>
       </Link>
       <img className='nav-dropdown' onClick={drop_toggle} src={nav_dropdown} alt="" />
-      <ul ref={menuRef} className='nav-menu flex items-center list-none gap-[50px] text-[#111111] text-[17px] font-semibold'>
+      <ul ref={menuRef} className='nav-menu flex items-center list-none gap-[50px] text-[#111111] text-[17px] font-semibold z-10 '>
         <li onClick={() => { setMenu("shop") }}><Link to={'/'}>Home</Link> {menu === "shop" ? <hr style={{ width: "100%" }} /> : <hr />}</li>
         <li onClick={() => { setMenu("men") }}><Link to={'/mens'}>Men</Link> {menu === "men" ? <hr style={{ width: "100%" }} /> : <hr />}</li>
         <li onClick={() => { setMenu("women") }}><Link to={'/womens'}>Women</Link> {menu === "women" ? <hr style={{ width: "100%" }} /> : <hr />}</li>
@@ -33,10 +33,10 @@ const Navbar = () => {
       </ul>
       <div className="nav-login-cart flex items-center gap-[45px] cursor-pointer">
         {localStorage.getItem('auth-token') ?
-          <button onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }} className='active:bg-[#f3f3f3] w-[157px] bg-white h-[58px] outline-none border-[1px] border-black rounded-[75px] text-[18px] text-[#515151] font-medium'>Logout</button>
+          <button onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }} className='w-[95px] bg-black h-[42px] outline-none rounded-[75px] text-[16px] text-white font-medium'>Logout</button>
           :
           <Link onClick={() => setMenu(null)} to={'/login'}>
-            <button className='active:bg-[#f3f3f3] w-[95px] bg-white h-[42px] outline-none border-[1px] border-black rounded-[75px] text-[17px] text-[#515151] font-medium'>Login</button>
+            <button className='active:bg-[#f3f3f3] w-[95px] bg-white h-[42px] outline-none border-[1px] border-black rounded-[75px] text-[16px] text-[#515151] font-medium'>Login</button>
           </Link>
         }
         <Link onClick={() => setMenu(null)} to={'/cart'}><img className='w-[28px]' src={cart_icon} alt="" /></Link>
