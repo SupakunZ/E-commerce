@@ -5,6 +5,7 @@ https://github.com/user-attachments/assets/253e24fb-e4ed-4512-b321-7451d238cf99
 
 ## 🍄 Live Demo 
 <a href='https://ecommercr.netlify.app' target="_blank">E-commerce</a>
+[Link](https://example.org/ "title" target="_blank")
 
 ## 🔥 Features
 
