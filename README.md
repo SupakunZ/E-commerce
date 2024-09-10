@@ -4,6 +4,7 @@ E-commerce Website is developed using ReactJS TailwindCSS for the client and Nod
 https://github.com/user-attachments/assets/253e24fb-e4ed-4512-b321-7451d238cf99
 
 ## 🍄 Live Demo 
+[link](https://ecommercr.netlify.app){:target="_blank"}
 <a href='https://ecommercr.netlify.app' target="_blank">E-commerce</a>
 
 ## 🔥 Features
